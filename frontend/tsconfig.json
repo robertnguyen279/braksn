@@ -1,0 +1,20 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "strict": true,
+    "types": ["eslint", "node", "jest"],
+    "paths": {
+      "public/*": ["../public/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/__tests__/**"]
+}

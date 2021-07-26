@@ -1,0 +1,87 @@
+createUser:
+  handler: src/handlers/users/createUser.handler
+  events:
+    - http:
+        method: POST
+        path: /user
+        cors: true
+
+readUser:
+  handler: src/handlers/users/readUser.handler
+  events:
+    - http:
+        method: GET
+        path: /user
+        cors: true
+
+loginUser:
+  handler: src/handlers/users/loginUser.handler
+  events:
+    - http:
+        method: POST
+        path: /login
+        cors: true
+
+loginByGoogle:
+  handler: src/handlers/users/loginByGoogle.handler
+  events:
+    - http:
+        method: POST
+        path: /login-by-google
+        cors: true
+
+loginByFacebook:
+  handler: src/handlers/users/loginByFacebook.handler
+  events:
+    - http:
+        method: POST
+        path: /login-by-facebook
+        cors: true
+
+changePassword:
+  handler: src/handlers/users/changePassword.handler
+  events:
+    - http:
+        method: POST
+        path: /user/password
+        cors: true
+
+logOut:
+  handler: src/handlers/users/logOut.handler
+  events:
+    - http:
+        method: POST
+        path: /user/log-out
+        cors: true
+
+updateAvatar:
+  handler: src/handlers/users/updateAvatar.handler
+  events:
+    - http:
+        method: POST
+        path: /user/avatar
+        cors: true
+
+saveArticle:
+  handler: src/handlers/users/saveArticle.handler
+  events:
+    - http:
+        method: POST
+        path: /user/article/{id}
+        cors: true
+
+listSavedArticles:
+  handler: src/handlers/users/listSavedArticles.handler
+  events:
+    - http:
+        method: GET
+        path: /user/articles
+        cors: true
+
+listSavedArticlesTotal:
+  handler: src/handlers/users/listSavedArticlesTotal.handler
+  events:
+    - http:
+        method: GET
+        path: /user/articles/total
+        cors: true

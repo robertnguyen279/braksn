@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingScreen should render correctly 1`] = `
+<div
+  className="absolute h-screen inset-0 w-screen flex items-center justify-center"
+>
+  <Loading />
+</div>
+`;

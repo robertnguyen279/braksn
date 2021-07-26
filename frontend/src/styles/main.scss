@@ -1,0 +1,17 @@
+@import 'mixins';
+@import 'global';
+
+// Taildwind
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Antdesign
+@import 'antd';
+
+// Animate.style
+@import 'animations';
+
+// Components
+@import 'components/loading';
+@import 'components/layout'

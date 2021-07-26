@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(70, 70, 70) !important;
+  font-weight: 500;
+}
+
+pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.bg-pink-5000 {
+  background-color: #EC4899;
+}
+
+.bg-blue-5000 {
+  background-color: #3B82F6;
+}
+
+.bg-yellow-5000 {
+  background-color: #F59E0B;
+}
+
+.bg-green-5000 {
+  background-color: #10B981;
+}
+
+.bg-red-5000 {
+  background-color: #EF4444;
+}
+
+.bg-purple-5000 {
+  background-color: #8B5CF6;
+}
+
+.bg-gray-5000 {
+  background-color: #6B7280;
+}
+
+//------------------
+.text-pink-5000:hover {
+  color: #EC4899;
+}
+
+.text-blue-5000:hover {
+  color: #3B82F6;
+}
+
+.text-yellow-5000:hover {
+  color: #F59E0B;
+}
+
+.text-green-5000:hover {
+  color: #10B981;
+}
+
+.text-red-5000:hover {
+  color: #EF4444;
+}
+
+.text-purple-5000:hover {
+  color: #8B5CF6;
+}
+
+.text-gray-5000:hover {
+  color: #6B7280;
+}
+
+.text-white-5000 {
+  color: white;
+}
+

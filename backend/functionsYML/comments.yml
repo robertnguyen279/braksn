@@ -1,0 +1,7 @@
+postComment:
+  handler: src/handlers/comments/postComment.handler
+  events:
+    - http:
+        method: POST
+        path: /comment
+        cors: true

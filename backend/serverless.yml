@@ -1,0 +1,56 @@
+service:
+  name: dt3-backend
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  serverless-iam-roles-per-function:
+    defaultInherit: true # Each function will inherit the service level roles too.
+  prune: # automatically prune old lambda versions
+    automatic: true
+    number: 3
+  apigwBinary:
+    types:
+      - 'multipart/form-data'
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+  - serverless-iam-roles-per-function
+  - serverless-prune-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  frameworkVersion: ‘1.64.1’
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'ap-southeast-1'}
+  apiGateway:
+    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+  environment:
+    DEBUG: '*'
+    NODE_ENV: ${self:provider.stage}
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    MONGO_URL: ${file(config/env.yml):MONGO_URL}
+    JWT_SECRET: ${file(config/env.yml):JWT_SECRET}
+    NEWS_API_KEY: ${file(config/env.yml):NEWS_API_KEY}
+    AWS_ACCESS_KEY_ID: ${file(config/env.yml):AWS_ACCESS_KEY_ID}
+    AWS_ACCESS_KEY_SECRET: ${file(config/env.yml):AWS_ACCESS_KEY_SECRET}
+  tracing:
+    lambda: true
+    apiGateway: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - xray:PutTraceSegments
+        - xray:PutTelemetryRecords
+        - 's3:GetObject'
+        - 's3:PutObject'
+      Resource: '*'
+
+functions:
+  - ${file(functionsYML/users.yml)}
+  - ${file(functionsYML/categories.yml)}
+  - ${file(functionsYML/articles.yml)}
+  - ${file(functionsYML/comments.yml)}
